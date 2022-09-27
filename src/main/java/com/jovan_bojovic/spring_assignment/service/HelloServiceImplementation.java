@@ -23,4 +23,12 @@ public class HelloServiceImplementation implements HelloService{
     public Hello findByLang(String lang) {
         return repository.findByLANG(lang);
     }
+
+    @Override
+    public boolean saveHello(String lanugage, String message) {
+        Hello hello = repository.save(new Hello(lanugage, message));
+        if (hello == null)
+            return true;
+        return false;
+    }
 }

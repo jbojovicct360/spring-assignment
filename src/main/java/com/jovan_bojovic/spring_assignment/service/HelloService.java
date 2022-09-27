@@ -10,4 +10,6 @@ public interface HelloService {
 
     Hello findByLang(String lang);
 
+    boolean saveHello(String lanugage, String message);
+
 }

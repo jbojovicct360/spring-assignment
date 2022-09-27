@@ -27,6 +27,7 @@ public class DatabaseInit {
                 template.execute("INSERT INTO HELLO(CURRENT, LANG) VALUES ('Hei maailma!', 'FI')");
                 template.execute("INSERT INTO HELLO(CURRENT, LANG) VALUES ('Ahoj svete!', 'CZ')");
                 template.execute("INSERT INTO HELLO(CURRENT, LANG) VALUES ('Zdravo svete!', 'SR')");
+                template.execute("INSERT INTO USERS(username, password) VALUES ('admin', 'admin')");
             }
         };
     }
