@@ -26,4 +26,9 @@ public class Hello {
     @Column(name = "LANG")
     private String LANG;
 
+    public Hello (String LANG, String CURRENT) {
+        this.LANG = LANG;
+        this.CURRENT = CURRENT;
+    }
+
 }

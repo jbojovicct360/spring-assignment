@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin page</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html, body {
+            min-height: 100vh;
+            padding: 0;
+            margin: 0;
+            font-family: Roboto, Arial, sans-serif;
+            font-size: 14px;
+            color: #666;
+            background-color: #9f9da7;
+        }
+        input, textarea {
+            outline: none;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        h1 {
+            margin-top: 0;
+            font-weight: 500;
+        }
+        form {
+            position: relative;
+            width: 80%;
+            border-radius: 30px;
+            background: #fff;
+        }
+        .form-inner {
+            padding: 40px;
+        }
+        .form-inner input,
+        .form-inner textarea {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 20px;
+            background: #d0dfe8;
+        }
+        .form-inner textarea {
+            resize: none;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 20px;
+            border: none;
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+            background-color: #3ca9e2;
+        }
+        @media (min-width: 568px) {
+            form {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+<body>
+<form method="post" action="/secure/hello/save-message" class="decor">
+    <div class="form-inner">
+        <h1>Add Hello World message</h1>
+        <input type="text" placeholder="Language" minlength="2" maxlength="2" required name="language">
+        <input type="text" placeholder="Message" required name="message">
+        <button type="submit" href="/">Submit</button>
+    </div>
+    <div th:if="${message != null}">
+        <h3 th:text="${message}"></h3>
+    </div>
+</form>
+</body>
+</html>
