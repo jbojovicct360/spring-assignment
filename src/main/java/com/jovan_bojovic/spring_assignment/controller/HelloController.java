@@ -2,6 +2,7 @@ package com.jovan_bojovic.spring_assignment.controller;
 
 import com.jovan_bojovic.spring_assignment.entity.Hello;
 import com.jovan_bojovic.spring_assignment.service.HelloService;
+import okhttp3.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -31,6 +32,11 @@ public class HelloController {
             model.addAttribute("lang", byLang.getCURRENT());
         }
         return "hello-world";
+    }
+
+    @GetMapping(path = "/api/{lang}")
+    public String getLangApiHello(@PathVariable(value = "lang") String lang, Model model) {
+        return null;
     }
 
 }

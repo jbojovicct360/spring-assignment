@@ -19,6 +19,7 @@ public class HelloLogger {
 
     @Around("loggetInit()")
     public Object logger(ProceedingJoinPoint joinPoint) {
+        System.out.println("*****************************");
         System.out.println("Method " + joinPoint.getSignature().getName() + " started!");
         Object object = null;
         try {
@@ -28,6 +29,8 @@ public class HelloLogger {
             System.out.println("Method " + joinPoint.getSignature().getName() + " has error!");
             System.out.println("Error message: " + e.getMessage());
             throw new RuntimeException(e);
+        } finally {
+            System.out.println("*****************************");
         }
         return object;
     }
