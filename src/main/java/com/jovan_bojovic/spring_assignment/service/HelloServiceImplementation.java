@@ -25,9 +25,8 @@ public class HelloServiceImplementation implements HelloService{
 
     @Override
     public boolean saveHello(String lanugage, String message) {
-        Hello hello = repository.save(new Hello(lanugage, message));
-        if (hello == null)
-            return true;
-        return false;
+        if (repository.save(new Hello(lanugage, message)) == null)
+            return false;
+        return true;
     }
 }
