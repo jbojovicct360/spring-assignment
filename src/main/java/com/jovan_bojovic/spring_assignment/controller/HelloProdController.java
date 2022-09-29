@@ -1,7 +1,6 @@
 package com.jovan_bojovic.spring_assignment.controller;
 
 import com.jovan_bojovic.spring_assignment.api.LanguageAPI;
-import com.jovan_bojovic.spring_assignment.entity.Hello;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @Profile("prod")
 @RequestMapping(path = "/hello")
-public class TestController {
+public class HelloProdController {
 
     @GetMapping(path = "/{lang}")
     public String getLangHello(@PathVariable(value = "lang") String lang, Model model) {
