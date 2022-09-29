@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class HelloDevController {
 
     @Autowired
-    HelloService service;
+    private HelloService service;
 
     @GetMapping(path = "/")
     public String helloWorldMVC(Model model) {
@@ -33,11 +33,6 @@ public class HelloDevController {
             model.addAttribute("lang", byLang.getCURRENT());
         }
         return "hello-world";
-    }
-
-    @GetMapping(path = "/api/{lang}")
-    public String getLangApiHello(@PathVariable(value = "lang") String lang, Model model) {
-        return null;
     }
 
 }

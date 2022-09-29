@@ -39,10 +39,11 @@ public class SecureHelloController {
 
     @PostMapping(path = "/save-message")
     public String saveMessage(@ModelAttribute MessageDTO messageDTO, Model model) {
+        System.out.printf(messageDTO.toString());
         if (helloService.saveHello(messageDTO.getLanguage(), messageDTO.getMessage())) {
-            model.addAttribute("message", "Message added!");
             return "admin-page";
         }
+        model.addAttribute("adminMessage", false);
         return "admin-page";
     }
 
