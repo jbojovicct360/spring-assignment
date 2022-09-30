@@ -12,7 +12,6 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.mockito.Mockito.when;
 
-
 @WebMvcTest(HelloDevController.class)
 @ActiveProfiles("dev")
 class HelloDevControllerTest {

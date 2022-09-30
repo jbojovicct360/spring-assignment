@@ -7,12 +7,8 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.mockito.junit.jupiter.MockitoSettings;
-import org.mockito.quality.Strictness;
-
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.lenient;
-import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 class HelloServiceImplementationTest {
@@ -28,4 +24,5 @@ class HelloServiceImplementationTest {
         lenient().when(repository.save(new Hello("EN", "Hello world!"))).thenReturn(new Hello("EN", "Hello world!"));
         assertEquals(false, service.saveHello("EN", "Hello world!"));
     }
+
 }

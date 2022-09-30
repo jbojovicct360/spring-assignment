@@ -2,7 +2,6 @@ package com.jovan_bojovic.spring_assignment.controller;
 
 import com.jovan_bojovic.spring_assignment.dto.LoginDTO;
 import com.jovan_bojovic.spring_assignment.dto.MessageDTO;
-import com.jovan_bojovic.spring_assignment.entity.User;
 import com.jovan_bojovic.spring_assignment.service.HelloService;
 import com.jovan_bojovic.spring_assignment.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,7 +38,6 @@ public class SecureHelloController {
 
     @PostMapping(path = "/save-message")
     public String saveMessage(@ModelAttribute MessageDTO messageDTO, Model model) {
-        System.out.printf(messageDTO.toString());
         if (helloService.saveHello(messageDTO.getLanguage(), messageDTO.getMessage())) {
             return "admin-page";
         }

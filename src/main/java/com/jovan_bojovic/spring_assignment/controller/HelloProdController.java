@@ -15,7 +15,8 @@ public class HelloProdController {
 
     @GetMapping(path = "/{lang}")
     public String getLangHello(@PathVariable(value = "lang") String lang, Model model) {
-        String byLang = LanguageAPI.getTranslationFromApi(lang);
+        LanguageAPI api = new LanguageAPI();
+        String byLang = api.getTranslationFromApi(lang);
         if(byLang == null) {
             model.addAttribute("lang", "Hello world");
         } else {
