@@ -7,7 +7,7 @@ import java.io.IOException;
 
 public class LanguageAPI {
 
-    public static String getTranslationFromApi(String lang) {
+    public String getTranslationFromApi(String lang) {
         OkHttpClient client = new OkHttpClient();
         Dotenv dotenv = null;
         dotenv = Dotenv.configure().load();
